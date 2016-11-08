@@ -1,6 +1,13 @@
 <div class="frame">
   <h1>To do List!</h1>
   <hr />
+  <div class="percentage">
+    <% done = List.count_by_sql("SELECT COUNT(*) FROM lists WHERE completed = true") %>
+    <% still = List.count_by_sql("SELECT COUNT(*) FROM lists WHERE completed = false") %>
+    <% amount = List.count_by_sql("SELECT COUNT(*) FROM lists") %>
+    <% magic_num = (done.to_f / amount.to_f) * 100 %>
+    <p> Completed: <%= magic_num %> %</p>
+  </div>
   <form class="boxes">
     <input type="checkbox" name="all" value="true">Show All</input>
     <input type="checkbox" name="urgent" value="">Urgent</input>

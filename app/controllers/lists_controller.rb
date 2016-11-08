@@ -23,7 +23,12 @@ class ListsController < ApplicationController
   def edit
     @list = List.find(params[:id])
   end
-
+  def moyen
+    done = List.count_by_sql("SELECT COUNT(*) FROM lists WHERE completed = true")
+    still = List.count_by_sql("SELECT COUNT(*) FROM lists WHERE completed = false")
+    amount = List.count_by_sql("SELECT COUNT(*) FROM lists")
+    @ready = (done / amount)
+  end
   def update
     @list = List.find(params[:id])
     if @list.update(list_params)
