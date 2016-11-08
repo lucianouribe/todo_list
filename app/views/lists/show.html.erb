@@ -1,0 +1,26 @@
+<div class="frame">
+  <h1> <%= @list.what %> </h1>
+  <hr />
+
+  <section class="element">
+    <p class="time">
+      Time:
+      <i> <%= @list.time %> </i>
+    </p>
+
+    <blockquote class="show">
+      <%= @list.body %>
+    </blockquote>
+
+    <p class="urgency"> Urgent? <br> <%= @list.urgent ? 'Yesterday was already late!' : 'Nah! Can be done tomorrow...' %> </p>
+    <p class="complete"> Completed? <br> <%= @list.completed ? "I'm done!" : "I promise, I'm easy!" %> </p>
+  </section>
+  <div class="btn">
+    <div class="menu izq">
+      <%= link_to 'Back', lists_path %>
+    </div>
+    <div class="menu der">
+      <%= link_to 'Home', root_path %>
+    </div>
+  </div>
+</div>

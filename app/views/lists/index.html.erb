@@ -1,0 +1,57 @@
+<div class="frame">
+  <h1>To do List!</h1>
+  <hr />
+  <form class="boxes">
+    <input type="checkbox" name="all" value="true">Show All</input>
+    <input type="checkbox" name="urgent" value='yes'>Urgent</input>
+    <input type="checkbox" name="completed" value=0>Not Completed</input>
+    <input type="submit" value="Submit">
+  </form>
+  <section class="array">
+    <% if params[:urgent] %>
+    <% values = List.find_by_sql("SELECT * FROM lists WHERE urgent = true") %>
+      <ul class="list">
+        <% values.each do |list| %>
+          <li class="info">
+            Time: <%= list.time %> => <%= list.what %>
+          </li>
+          <li class="options">
+            <%= link_to 'Show', list_path(list) %>
+            <%= link_to 'Edit', edit_list_path(list) %>
+            <%= link_to 'Delete', list_path(list), method: :delete, data: {confirm: 'Are you sure?  Really?'} %>
+          </li>
+        <% end %>
+      </ul>
+    <% elsif params[:completed] %>
+    <% values = List.find_by_sql("SELECT * FROM lists WHERE completed = false") %>
+      <ul class="list">
+        <% values.each do |list| %>
+          <li class="info">
+            Time: <%= list.time %> => <%= list.what %>
+          </li>
+          <li class="options">
+            <%= link_to 'Show', list_path(list) %>
+            <%= link_to 'Edit', edit_list_path(list) %>
+            <%= link_to 'Delete', list_path(list), method: :delete, data: {confirm: 'Are you sure?  Really?'} %>
+          </li>
+        <% end %>
+      </ul>
+    <% else %>
+      <ul class="list">
+        <% @todo_list.each do |list| %>
+          <li class="info">
+            Time: <%= list.time %> => <%= list.what %>
+          </li>
+          <li class="options">
+            <%= link_to 'Show', list_path(list) %>
+            <%= link_to 'Edit', edit_list_path(list) %>
+            <%= link_to 'Delete', list_path(list), method: :delete, data: {confirm: 'Are you sure?  Really?'} %>
+          </li>
+        <% end %>
+      </ul>
+    <% end  %>
+  </section>
+  <div class="menu">
+    <%= link_to 'New Element', new_list_path %>
+  </div>
+</div>

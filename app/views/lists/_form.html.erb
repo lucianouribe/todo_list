@@ -1,0 +1,26 @@
+<section class="formas">
+  <%= form_for @list do |f| %>
+    <%= f.label :what %>
+    <%= f.text_field :what %>
+    <br>
+
+    <%= f.label :time %>
+    <%= f.text_field :time %>
+    <br>
+
+    <%= f.label :body %>
+    <%= f.text_area :body %>
+    <br>
+
+    <%= f.label :urgent %>
+    <%= f.check_box :urgent %>
+    <br>
+
+    <%= f.label :completed %>
+    <%= f.check_box :completed %>
+    <br>
+    <div class="submit">
+      <%= f.submit %>
+    </div>
+  <% end %>
+</section>

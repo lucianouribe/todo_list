@@ -1,0 +1,13 @@
+<div class="frame">
+  <h1>Edit element: <%= @list.what %> </h1>
+  <hr />
+  <%= render(partial: 'form') %>
+  <div class="btn">
+    <div class="menu izq">
+      <%= link_to 'To do list', lists_path %>
+    </div>
+    <div class="menu der">
+      <%= link_to 'Home', root_path %>
+    </div>
+  </div>
+</div>

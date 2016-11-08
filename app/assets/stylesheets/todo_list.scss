@@ -1,0 +1,247 @@
+// Place all the styles related to the todo_list controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+/*
+========================
+BOX SIZING
+========================
+*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing: border-box;
+}
+/*
+========================
+BODY
+========================
+*/
+body {
+  font-family: helvetica, arial, sans-serif;
+  width: 100%;
+  background-color: #fafafa;
+}
+
+hr {
+    height: 30px;
+    border-style: solid;
+    border-color: black;
+    border-width: 1px 0 0 0;
+    border-radius: 20px;
+}
+hr:before { /* Not really supposed to work, but does */
+    display: block;
+    content: "";
+    height: 30px;
+    margin-top: -31px;
+    border-style: solid;
+    border-color: black;
+    border-width: 0 0 1px 0;
+    border-radius: 20px;
+}
+
+.frame {
+  width: 60%;
+  // height: 40vh;
+  margin: 0 auto;
+  margin-top: 10vh;
+  background-color: #6B745A;
+  border-radius: 20px;
+  border: 2px solid #6B745A;
+  padding: 12px;
+  text-align: center;
+  box-shadow: 5px 6px 10px rgba(0, 0, 0, 0.3);
+}
+h1 {
+  font-size: 24px;
+}
+
+/*
+========================
+BUTTONS
+========================
+*/
+.menu {
+  margin: 20px auto;
+  width: 200px;
+  padding: 20px 30px;
+  border-radius: 10px;
+  border: 1px solid #2E3F12;
+}
+
+.menu:hover {
+  background-color: #2E3F12;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:visited {
+  text-decoration: none;
+}
+.btn {
+  display: inline-block;
+}
+.izq {
+  float: left;
+  margin-right: 5px;
+}
+.der {
+  float: right;
+  margin-left: 5px;
+}
+/*
+========================
+WELCOMING PAGE
+========================
+*/
+.frame h1 {
+  padding: 20px 0;
+}
+.hello p {
+  font-size: 18px;
+  line-height: 60px;
+  font-style: italic;
+}
+
+
+/*
+========================
+INDEX
+========================
+*/
+.boxes {
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+
+section li {
+  padding: 10px 20px;
+}
+.list {
+  display: inline;
+
+}
+.info {
+  margin: 10px auto;
+  border-radius: 8px;
+  font-size: 18px;
+  text-transform: capitalize;
+  border: 1px solid #fff;
+  width: 40%;
+}
+.options a {
+  margin: 0 5px;
+  padding: 8px 15px;
+  background-color: #2E3F12;
+  border-radius: 8px;
+  border: 1px solid #2E3F12;
+}
+
+.options a:hover {
+  background-color: #6B745A;
+  border: 1px solid #2E3F12;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, .3)
+}
+/*
+========================
+SHOW
+========================
+*/
+.element {
+  padding: 0 30px;
+}
+.element .time {
+  text-align: left;
+  margin-bottom: 20px;
+  font-style: italic;
+
+}
+.element .show {
+  font-size: 18px;
+  margin-bottom: 30px;
+}
+.element .urgency {
+  text-align: left;
+  line-height: 30px;
+}
+.element .complete {
+  text-align: right;
+  line-height: 30px;
+}
+/*
+========================
+form
+========================
+*/
+.formas {
+  font-size: 16px;
+}
+.formas input {
+  width: 300px;
+  height: 30px;
+  border: 1px solid #40392F;
+  border-radius: 5px;
+  margin: 5px;
+  padding-left: 12px;
+}
+.formas input[type="text"] {
+  font-size: 14px;
+  color: #40392F;
+}
+.formas textarea {
+  width: 300px;
+  min-height: 120px;
+  border-radius: 5px;
+  border: 1px solid #40392F;
+  padding: 12px;
+}
+.formas textarea[type="text"] {
+  font-size: 14px;
+  color: #40392F;
+}
